@@ -1,14 +1,18 @@
 <template>
-  <hello-world></hello-world>
+  <div>
+    <my-counter></my-counter>
+    <p></p>
+    <my-counter></my-counter>
+  </div>
 </template>
 
 <script>
-import helloWorld from './components/hello-world.vue'
+import myCounter from './components/my-counter.vue'
 
 export default {
   name: 'app',
   components: {
-    helloWorld
+    myCounter
   }
 }
 </script>
