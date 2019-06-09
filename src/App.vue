@@ -1,18 +1,34 @@
 <template>
   <div>
-    <my-counter></my-counter>
+    <button @click="onSelectLesson">Lessons</button>
+    <button @click="onSelectApply">Apply</button>
     <p></p>
-    <my-counter></my-counter>
+    <component :is="content"></component>
   </div>
 </template>
 
 <script>
-import myCounter from './components/my-counter.vue'
+import myLessons from './components/my-lessons.vue';
+import myApply from './components/my-apply.vue';
+
+let onSelectLesson = function() {
+  this.content = 'my-lessons';
+};
+
+let onSelectApply = function() {
+  this.content = 'my-apply';
+};
 
 export default {
   name: 'app',
   components: {
-    myCounter
+    myLessons,
+    myApply
+  },
+  data: () => ({ content: 'my-lessons' }),
+  methods: {
+    onSelectLesson,
+    onSelectApply,
   }
-}
+};
 </script>
