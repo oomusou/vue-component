@@ -3,7 +3,9 @@
     <button @click="onSelectLesson">Lessons</button>
     <button @click="onSelectApply">Apply</button>
     <p></p>
-    <component :is="content"></component>
+    <keep-alive>
+      <component :is="content"></component>
+    </keep-alive>
   </div>
 </template>
 
